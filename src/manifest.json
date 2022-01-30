@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+
+    "name": "StackOverflow Copy-Paste Stats",
+    "short_name": "Stack CP Stats",
+    "description": "Get stats of your copy & pastes from StackOverflow.",
+    "version": "1.0",
+    "icons": {
+        "256": "./assets/logo-256.png"
+    },
+  
+    
+    "content_scripts": [
+        {
+            "matches": ["https://stackoverflow.com/questions/*"],
+            "js": ["./js/copyPasteCounter.js"]
+        },
+        {
+            "matches": ["https://stackoverflow.com/*"],
+            "js": ["./js/statsInject.js"]
+        }
+    ],
+
+    "host_permissions": [],
+    "permissions": [
+        "storage"
+    ]
+  }
