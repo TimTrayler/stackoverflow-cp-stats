@@ -1,12 +1,5 @@
 
-const footerResetLink = document.createElement('li')
 const statsNavItem = document.createElement('li')
-
-footerResetLink.innerHTML = "<a href=\"javascript:window.postMessage('resetCopyPastes', '*')\" class=\"-link\">Reset Copy-Paste Count</a>"
-
-document.querySelector(".js-primary-footer-links").append(footerResetLink)
-
-
 
 function injectStats() {
     chrome.storage.sync.get(['copyPastes', 'copyPasteLength'], function(result) {
@@ -40,26 +33,6 @@ function injectStats() {
 
     })
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 injectStats()
